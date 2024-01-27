@@ -1,0 +1,1965 @@
+{
+	"info": {
+		"_postman_id": "e9c1038f-29f9-46b0-9fe1-5a08bf5938c7",
+		"name": "Notes Nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13530824"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}user/login",
+									"host": [
+										"{{baseUrl}}user"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "student",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}student/all",
+									"host": [
+										"{{baseUrl}}student"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "64282420bbb26428f3b27848",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}student/single",
+									"host": [
+										"{{baseUrl}}student"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64282420bbb26428f3b27848",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}student/changeStatus",
+									"host": [
+										"{{baseUrl}}student"
+									],
+									"path": [
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "course",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}course/all",
+									"host": [
+										"{{baseUrl}}course"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64281e77501a4e72bbf4e821",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}course/single",
+									"host": [
+										"{{baseUrl}}course"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "MCA",
+											"type": "text"
+										},
+										{
+											"key": "totalSemesters",
+											"value": "4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}course/add",
+									"host": [
+										"{{baseUrl}}course"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Btech",
+											"type": "text"
+										},
+										{
+											"key": "totalSemesters",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}course/update",
+									"host": [
+										"{{baseUrl}}course"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64281e77501a4e72bbf4e821",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}course/changeStatus",
+									"host": [
+										"{{baseUrl}}course"
+									],
+									"path": [
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "branch",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}branch/all",
+									"host": [
+										"{{baseUrl}}branch"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6428204cb673bcb8a340c08a",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}branch/single",
+									"host": [
+										"{{baseUrl}}branch"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Mechanical",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}branch/add",
+									"host": [
+										"{{baseUrl}}branch"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Civil",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "6428204cb673bcb8a340c08a",
+											"type": "text"
+										},
+										{
+											"key": "_id",
+											"value": "6428204cb673bcb8a340c08a",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}branch/update",
+									"host": [
+										"{{baseUrl}}branch"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6428204cb673bcb8a340c08a",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}branch/changeStatus",
+									"host": [
+										"{{baseUrl}}branch"
+									],
+									"path": [
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "material",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}material/all",
+									"host": [
+										"{{baseUrl}}material"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642a8ec5457849accb06b562",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}material/single",
+									"host": [
+										"{{baseUrl}}material"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "materialType",
+											"value": "notes",
+											"description": "notes, question paper, lab file",
+											"type": "text"
+										},
+										{
+											"key": "branchId",
+											"value": "64282096f429cf4b8111f3bc",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										},
+										{
+											"key": "semester",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "notes 1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "description of notes 1",
+											"type": "text"
+										},
+										{
+											"key": "material_image",
+											"type": "file",
+											"src": "/D:/O7 Services/class/html form.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}material/add",
+									"host": [
+										"{{baseUrl}}material"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "materialType",
+											"value": "notes",
+											"description": "notes, question papers, lab files",
+											"type": "text"
+										},
+										{
+											"key": "branchId",
+											"value": "6428204cb673bcb8a340c08a",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										},
+										{
+											"key": "semester",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Title 1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "notes description updates",
+											"type": "text"
+										},
+										{
+											"key": "material_image",
+											"type": "file",
+											"src": "/D:/O7 Services/class/html test.png"
+										},
+										{
+											"key": "_id",
+											"value": "642a933b4191aa792c0e1929",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}material/update",
+									"host": [
+										"{{baseUrl}}material"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642a8ec5457849accb06b562",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}material/changeStatus",
+									"host": [
+										"{{baseUrl}}material"
+									],
+									"path": [
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "quiz",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										},
+										{
+											"key": "branchId",
+											"value": "64282096f429cf4b8111f3bc",
+											"type": "text"
+										},
+										{
+											"key": "semester",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Quiz1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Test purpose quiz 1",
+											"type": "text"
+										},
+										{
+											"key": "totalQuestions",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}quiz/add",
+									"host": [
+										"{{baseUrl}}quiz"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										},
+										{
+											"key": "branchId",
+											"value": "64282096f429cf4b8111f3bc",
+											"type": "text"
+										},
+										{
+											"key": "semester",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Quiz1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Test purpose quiz 1",
+											"type": "text"
+										},
+										{
+											"key": "totalQuestions",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "_id",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}quiz/update",
+									"host": [
+										"{{baseUrl}}quiz"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}quiz/all",
+									"host": [
+										"{{baseUrl}}quiz"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6422cafbbd1f820914c9c456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}quiz/single",
+									"host": [
+										"{{baseUrl}}quiz"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}quiz/changeStatus",
+									"host": [
+										"{{baseUrl}}quiz"
+									],
+									"path": [
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "quiz-question",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "quizId",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										},
+										{
+											"key": "questionNo",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "question",
+											"value": "Question 6",
+											"type": "text"
+										},
+										{
+											"key": "option1",
+											"value": "option 1",
+											"type": "text"
+										},
+										{
+											"key": "option2",
+											"value": "option 2",
+											"type": "text"
+										},
+										{
+											"key": "option3",
+											"value": "option 3",
+											"type": "text"
+										},
+										{
+											"key": "option4",
+											"value": "option 4",
+											"type": "text"
+										},
+										{
+											"key": "answer",
+											"value": "option 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}question/add",
+									"host": [
+										"{{baseUrl}}question"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "quizId",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										},
+										{
+											"key": "questionNo",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "question",
+											"value": "Question 4",
+											"type": "text"
+										},
+										{
+											"key": "option1",
+											"value": "option 1",
+											"type": "text"
+										},
+										{
+											"key": "option2",
+											"value": "option 2",
+											"type": "text"
+										},
+										{
+											"key": "option3",
+											"value": "option 3",
+											"type": "text"
+										},
+										{
+											"key": "option4",
+											"value": "option 4",
+											"type": "text"
+										},
+										{
+											"key": "answer",
+											"value": "option 4",
+											"type": "text"
+										},
+										{
+											"key": "_id",
+											"value": "642c075afcdf176e9089b640",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}question/update",
+									"host": [
+										"{{baseUrl}}question"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "quizId",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}question/all",
+									"host": [
+										"{{baseUrl}}question"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642c075afcdf176e9089b640",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}question/single",
+									"host": [
+										"{{baseUrl}}question"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642c075afcdf176e9089b640",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}question/changeStatus",
+									"host": [
+										"{{baseUrl}}question"
+									],
+									"path": [
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "quiz submissions",
+					"item": [
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "quizId",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "642c113d5359434f5b6e607b",
+											"type": "text"
+										},
+										{
+											"key": "totalQuestions",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "correctQuestions",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "_id",
+											"value": "642c115b5359434f5b6e6083",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}submission/update",
+									"host": [
+										"{{baseUrl}}submission"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642c115b5359434f5b6e6083",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}submission/single",
+									"host": [
+										"{{baseUrl}}submission"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}submission/all",
+									"host": [
+										"{{baseUrl}}submission"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dashboard",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}dashboard",
+							"host": [
+								"{{baseUrl}}dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Student 2",
+											"type": "text"
+										},
+										{
+											"key": "rollNo",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "contact",
+											"value": "1234567891",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "student2@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										},
+										{
+											"key": "branchId",
+											"value": "64282096f429cf4b8111f3bc",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}student/add",
+									"host": [
+										"{{baseUrl}}student"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Student Name",
+											"type": "text"
+										},
+										{
+											"key": "rollno",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "contact",
+											"value": "1234567890",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "student1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										},
+										{
+											"key": "branchId",
+											"value": "64282096f429cf4b8111f3bc",
+											"type": "text"
+										},
+										{
+											"key": "_id",
+											"value": "64282420bbb26428f3b27848",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}student/update",
+									"host": [
+										"{{baseUrl}}student"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "student1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}user/login",
+									"host": [
+										"{{baseUrl}}user"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "course",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}course/all",
+									"host": [
+										"{{baseUrl}}course"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}course/single",
+									"host": [
+										"{{baseUrl}}course"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "branch",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "couseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}roomtype/all",
+									"host": [
+										"{{baseUrl}}roomtype"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}branch/single",
+									"host": [
+										"{{baseUrl}}branch"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "quiz",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "courseId",
+											"value": "64281e3e501a4e72bbf4e81c",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}quiz/all",
+									"host": [
+										"{{baseUrl}}quiz"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}quiz/single",
+									"host": [
+										"{{baseUrl}}quiz"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "quiz-question",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "quizId",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}question/all",
+									"host": [
+										"{{baseUrl}}question"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642c075afcdf176e9089b640",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}question/single",
+									"host": [
+										"{{baseUrl}}question"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "quiz submissions",
+					"item": [
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "642c115b5359434f5b6e6083",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}submission/single",
+									"host": [
+										"{{baseUrl}}submission"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "642c113d5359434f5b6e607b",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}submission/all",
+									"host": [
+										"{{baseUrl}}submission"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "quizId",
+											"value": "642bd81a4878997ec4ea3834",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "642c113d5359434f5b6e607b",
+											"type": "text"
+										},
+										{
+											"key": "totalQuestions",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "correctQuestions",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}submission/add",
+									"host": [
+										"{{baseUrl}}submission"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
